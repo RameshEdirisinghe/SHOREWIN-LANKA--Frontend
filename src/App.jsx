@@ -62,9 +62,8 @@ export default function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch(
-          `${"https://shorewin-lanka-backend.vercel.app"}/api/products`,
-        );
+        const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://shorewin-lanka-backend.vercel.app';
+        const res = await fetch(`${API_BASE}/api/products`);
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);
