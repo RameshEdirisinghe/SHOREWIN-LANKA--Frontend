@@ -60,7 +60,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
 
   const fetchOrders = async () => {
     setIsLoadingOrders(true)
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://shorewin-lanka-backend.vercel.app/'
     try {
       const res = await fetch(`${baseUrl}/api/orders`)
       if (res.ok) {

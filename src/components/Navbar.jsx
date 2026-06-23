@@ -85,9 +85,9 @@ export default function Navbar({
           <a href="#about-company" className={`nav-link ${currentPage === 'about-company' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('about-company'); }}>
             {t.company}
           </a>
-          {/* <a href="/admin" className={`nav-link ${currentPage === 'admin' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('admin'); }}>
+          <a href="/admin" className={`nav-link ${currentPage === 'admin' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('admin'); }}>
             {t.admin}
-          </a> */}
+          </a> 
 
           {/* Mobile selectors inside drawer */}
           <div className="mobile-selectors">
