@@ -69,17 +69,6 @@ export default function Navbar({
     },
   }[language]
 
-  const handleNavClick = (page, hash) => {
-    setCurrentPage(page)
-    setMenuOpen(false)
-    if (hash) {
-      setTimeout(() => {
-        const el = document.querySelector(hash)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-      }, 50)
-    }
-  }
-
   return (
     <header className={`navbar-header ${scrolled ? 'navbar-header--scrolled' : ''}`}>
       <div className="container navbar-container">
