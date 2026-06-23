@@ -60,7 +60,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
 
   const fetchOrders = async () => {
     setIsLoadingOrders(true)
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://shorewin-lanka-backend.vercel.app'
+    const baseUrl = 'https://shorewin-lanka-backend.vercel.app'
     try {
       const res = await fetch(`${baseUrl}/api/orders`)
       if (res.ok) {
@@ -119,7 +119,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
     e.preventDefault()
     setIsLoggingIn(true)
     setLoginError('')
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+    const baseUrl = 'https://shorewin-lanka-backend.vercel.app'
     try {
       const res = await fetch(`${baseUrl}/api/auth/login`, {
         method: 'POST',
@@ -155,7 +155,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
     const product = products.find(p => p.id === id)
     if (!product) return
     const nextState = !product.active
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+    const baseUrl = 'https://shorewin-lanka-backend.vercel.app'
     try {
       const res = await fetch(`${baseUrl}/api/products/${id}`, {
         method: 'PUT',
@@ -183,7 +183,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
   // Delete product — calls backend DELETE, then refreshes from server
   const handleDeleteProduct = async (id, name) => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'
+    const baseUrl = 'https://shorewin-lanka-backend.vercel.app'
     try {
       const res = await fetch(`${baseUrl}/api/products/${id}`, {
         method: 'DELETE',
