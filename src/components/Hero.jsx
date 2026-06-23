@@ -81,7 +81,6 @@ export default function Hero({ buyerType, language }) {
 
           <div className="hero-actions animate-fade-up">
             <a href="#products" className="btn btn--gold">{t.btnProducts}</a>
-            <a href="#order" className="btn btn--ghost-white">{t.btnQuote}</a>
           </div>
 
           <div className="hero-stats animate-fade-up">
