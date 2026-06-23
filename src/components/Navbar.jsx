@@ -27,6 +27,16 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', onScroll)
   }, [currentPage])
 
+  const handleNavClick = (page, hash) => {
+    setCurrentPage(page)
+    setMenuOpen(false)
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    }
+  }
   // Translation sets
   const t = {
     EN: {
