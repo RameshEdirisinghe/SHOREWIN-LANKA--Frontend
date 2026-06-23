@@ -76,8 +76,7 @@ export default function Navbar({
         <a href="#hero" className="navbar-logo" onClick={(e) => { e.preventDefault(); handleNavClick('home', '#hero'); }}>
           <img src={companyLogo} alt="Shorewin Agri Logo" className="navbar-logo-img" />
           <div className="navbar-logo__text">
-            <span className="brand-main">Shorewin Agri</span>
-            <span className="brand-sub">Reserve</span>
+            <span className="brand-main">Shorewin Agro</span>
           </div>
         </a>
 
@@ -95,9 +94,9 @@ export default function Navbar({
           <a href="#about-company" className={`nav-link ${currentPage === 'about-company' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('about-company'); }}>
             {t.company}
           </a>
-          <a href="/admin" className={`nav-link ${currentPage === 'admin' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('admin'); }}>
+          {/* <a href="/admin" className={`nav-link ${currentPage === 'admin' ? 'active' : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('admin'); }}>
             {t.admin}
-          </a> 
+          </a>  */}
 
           {/* Mobile selectors inside drawer */}
           <div className="mobile-selectors">
