@@ -9,7 +9,7 @@ export default function AboutCompany({ language }) {
 
   const t = {
     EN: {
-      overline: 'B2B Spice Exporter · Est. 2008',
+      overline: 'B2B Spice Exporter ',
       title: 'Our Company',
       subtitle: 'Boutique Heritage & Global Vision',
       tagline:
@@ -23,9 +23,7 @@ export default function AboutCompany({ language }) {
         'To build transparent, high-value supply lines directly connecting highland organic smallholder collectives with global B2B culinary and therapeutic innovators, ensuring fair compensation and zero chemical footprint.',
 
       stats: [
-        { val: 'Est. 2008', lbl: 'Heritage Cultivation' },
         { val: '100%',      lbl: 'Traceable Farm to Shelf' },
-        { val: 'G.A.P.',   lbl: 'GlobalG.A.P. Certified' },
         { val: 'Organic',  lbl: 'Zero Chemical Footprint' },
       ],
 
@@ -74,9 +72,7 @@ export default function AboutCompany({ language }) {
         'කඳුකරයේ කාබනික ගොවි එකමුතුවන් ගෝලීය B2B වෙළඳපොල සමඟ සෘජුව සම්බන්ධ කරන විනිවිද පෙනෙන සැපයුම් දාමයක් ගොඩනැගීම සහ ගොවීන්ට සාධාරණ මිලක් ලබා දීම.',
 
       stats: [
-        { val: '2008',    lbl: 'කුළුබඩු උරුමය' },
         { val: '100%',    lbl: 'නිරීක්ෂණය කළ හැකි' },
-        { val: 'G.A.P.',  lbl: 'යුරෝපීය B2B ප්‍රමිති' },
         { val: 'කාබනික', lbl: 'රසායනික නොමැති' },
       ],
 
@@ -123,7 +119,6 @@ export default function AboutCompany({ language }) {
               <img src={companyLogo} alt="Shorewin Agri" className="ac-hero__logo" />
             </div>
             <div className="ac-hero__badges">
-              <span className="ac-hero__badge">GlobalG.A.P.</span>
               <span className="ac-hero__badge">100% Organic</span>
               <span className="ac-hero__badge">EU Compliant</span>
             </div>

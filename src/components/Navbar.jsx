@@ -76,7 +76,7 @@ export default function Navbar({
         <a href="#hero" className="navbar-logo" onClick={(e) => { e.preventDefault(); handleNavClick('home', '#hero'); }}>
           <img src={companyLogo} alt="Shorewin Agri Logo" className="navbar-logo-img" />
           <div className="navbar-logo__text">
-            <span className="brand-main">Shorewin Agro</span>
+            <span className="brand-main">Shorewin Lanka Agro</span>
           </div>
         </a>
 

@@ -318,7 +318,7 @@
 }
 
 /* Responsive: stack on tablet / mobile */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .ac-hero {
     flex-direction: column;
     align-items: center;
@@ -405,13 +405,15 @@
 /* ── 3. KEY METRICS ROW ── */
 .about-metrics-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   border: 1px solid rgba(197, 157, 95, 0.18);
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: 5rem;
   box-shadow: var(--shadow-sm);
+  max-width: 600px;
+  margin-inline: auto;
 }
 
 .metric-cell {
@@ -455,11 +457,6 @@
 @media (max-width: 768px) {
   .about-metrics-row {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .metric-cell:nth-child(2) { border-right: none; }
-  .metric-cell:nth-child(1),
-  .metric-cell:nth-child(2) {
-    border-bottom: 1px solid rgba(197, 157, 95, 0.15);
   }
 }
 

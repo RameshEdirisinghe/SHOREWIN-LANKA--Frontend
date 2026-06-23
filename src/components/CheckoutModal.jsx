@@ -52,7 +52,7 @@ export default function CheckoutModal({
       `• ${item.name} (${item.grade}) - ${item.quantity} ${item.unit || 'kg'} @ ${currencySymbol}${item.price.toLocaleString()} (${currencySymbol}${(item.price * item.quantity).toLocaleString()})`
     ).join('\n')
 
-    return `🌿 *Ceylon Spice Co. - New Order*
+    return `🌿 *Shorewin Lanka Agro - New Order*
 ----------------------------------------
 *Customer Details:*
 • *Name:* ${formData.name.trim()}

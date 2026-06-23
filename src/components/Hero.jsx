@@ -5,7 +5,7 @@ export default function Hero({ buyerType, language }) {
   // Translations
   const t = {
     EN: {
-      label: "Sri Lanka's Finest · Est. 2008",
+      label: "Sri Lanka's Finest",
       titlePre: "The World's",
       titleItalic: "Purest",
       titlePost: "Ceylon Spices",
@@ -85,10 +85,6 @@ export default function Hero({ buyerType, language }) {
           </div>
 
           <div className="hero-stats animate-fade-up">
-            <div className="stat-card">
-              <strong>15+</strong>
-              <span>{t.statYears}</span>
-            </div>
             <div className="stat-card-divider" />
             <div className="stat-card">
               <strong>40+</strong>

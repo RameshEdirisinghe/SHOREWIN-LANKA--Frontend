@@ -19,7 +19,7 @@ export default function Footer({ buyerType, language }) {
       reviews: "Client Testimonials",
       contact: "Contact Estate",
       contactTitle: "Get in Touch",
-      address: "📍 Galle Fort Estate, Galle 80000, Sri Lanka",
+      address: "📍No 725/ A, Mankada Road, Kadawatha, Sri Lanka",
       hours: "🕐 Mon–Sat 8:00 AM – 6:00 PM (IST)",
       newsletterTitle: "Estate Chronicles",
       newsletterPlaceholder: "Enter your email for spice tips...",
@@ -44,7 +44,7 @@ export default function Footer({ buyerType, language }) {
       reviews: "පාරිභෝගික අදහස්",
       contact: "විමසීම්",
       contactTitle: "සම්බන්ධ වීමට",
-      address: "📍 ගාලු කොටුව වතුයාය, ගාල්ල 80000, ශ්‍රී ලංකාව",
+      address: "📍 No 725/ A, මාකන්දන පාර, කඩවත, ශ්‍රී ලංකාව",
       hours: "🕐 සඳුදා-සෙනසුරාදා පෙ.ව. 8:00 - ප.ව. 6:00 (IST)",
       newsletterTitle: "කුළුබඩු තොරතුරු",
       newsletterPlaceholder: "ඔබේ විද්‍යුත් තැපෑල ඇතුළත් කරන්න...",
@@ -69,7 +69,7 @@ export default function Footer({ buyerType, language }) {
             <div className="footer-brand-logo-container">
               <img src={companyLogo} alt="Shorewin Agri Logo" className="footer-brand-logo-img" />
               <div className="footer-brand-logo-text">
-                Shorewin <span>Agri</span>
+                Shorewin Lanka <span>Agro</span>
               </div>
             </div>
             <p className="footer-tagline-text">{t.tagline}</p>
@@ -116,8 +116,8 @@ export default function Footer({ buyerType, language }) {
             <div className="footer-contact-details">
               <strong>{t.contactTitle}</strong>
               <p>{t.address}</p>
-              <p>📱 +94 71 234 5678</p>
-              <p>✉️ orders@ceylonspicereserve.lk</p>
+              <p>📱 +94 76 720 1226 / 0112923542</p>
+              <p>✉️ shorewinlanka@sltnet.lk</p>
               <p>{t.hours}</p>
             </div>
           </div>
