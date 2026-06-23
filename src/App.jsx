@@ -66,33 +66,33 @@ export default function App() {
   }, [])
 
   // Initialize page from URL on first load, then keep URL in sync on navigation
-  useEffect(() => {
-    const path = window.location.pathname
+  const isFirstRender = useRef(true)
 
-    // On mount: derive page from URL (handles direct navigation & refresh)
+useEffect(() => {
+  if (isFirstRender.current) {
+    isFirstRender.current = false
+    const path = window.location.pathname
     const pageFromPath =
       path === '/admin'           ? 'admin'           :
       path === '/product-details' ? 'product-details' :
       path === '/about-company'   ? 'about-company'   :
       'home'
-
     if (pageFromPath !== currentPage) {
       setCurrentPage(pageFromPath)
-      return // let the re-render triggered by setCurrentPage sync the URL next tick
     }
+    return
+  }
 
-    // On subsequent renders: keep URL in sync with currentPage state
-    const targetPath =
-      currentPage === 'admin'           ? '/admin'           :
-      currentPage === 'product-details' ? '/product-details' :
-      currentPage === 'about-company'   ? '/about-company'   :
-      '/'
+  const targetPath =
+    currentPage === 'admin'           ? '/admin'           :
+    currentPage === 'product-details' ? '/product-details' :
+    currentPage === 'about-company'   ? '/about-company'   :
+    '/'
 
-    if (window.location.pathname !== targetPath) {
-      window.history.pushState({}, '', targetPath)
-    }
-  }, [currentPage])
-
+  if (window.location.pathname !== targetPath) {
+    window.history.pushState({}, '', targetPath)
+  }
+}, [currentPage])
   // Adjust currency and language based on buyerType selection automatically
   useEffect(() => {
     setCurrency('LKR')
