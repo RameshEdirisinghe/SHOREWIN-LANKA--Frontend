@@ -1,4 +1,4 @@
-/* Admin Panel Styling - Ceylon Spice Shop Premium Dark Gold */
+/* Admin Panel Styling - Shorewin Lanka Agro Premium Dark Gold */
 
 .admin-page-container {
   min-height: 100vh;
@@ -51,7 +51,7 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 10;
-  border: 1px solid rgba(197, 157, 95, 0.15);
+  border: 1px solid rgba(197, 157, 95, 0.25) !important;
   animation: scaleIn 0.5s var(--transition-smooth) forwards;
 }
 

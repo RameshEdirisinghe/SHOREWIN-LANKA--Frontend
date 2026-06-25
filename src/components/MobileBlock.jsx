@@ -46,7 +46,7 @@ export default function MobileBlock() {
         </div>
         <div className="mobile-block-brand">
           <span>🌿</span>
-          <span>Ceylon Spice Admin Portal</span>
+          <span>Shorewin Lanka Agro Admin Portal</span>
         </div>
       </div>
     </div>

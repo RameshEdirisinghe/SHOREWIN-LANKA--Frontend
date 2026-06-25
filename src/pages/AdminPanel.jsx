@@ -543,10 +543,10 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
   if (!isAuthenticated) {
     return (
       <div className="admin-login-wrapper">
-        <div className="admin-login-card glass">
+        <div className="admin-login-card glass-dark">
           <div className="admin-login-logo">
             <img src={companyLogo} alt="Shorewin Agri Logo" className="admin-login-logo-img" />
-            <h1>Ceylon Reserve</h1>
+            <h1>Shorewin Lanka Agro</h1>
             <p>Admin Workspace</p>
           </div>
           
@@ -594,7 +594,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
             style={{ width: '100%', justifyContent: 'center', marginTop: '20px' }}
             onClick={() => setCurrentPage('home')}
           >
-            <ArrowLeft size={16} /> Back to Ceylon Shop
+            <ArrowLeft size={16} /> Back to Shorewin Shop
           </button>
         </div>
       </div>
@@ -622,8 +622,8 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
           <div className="admin-sidebar-header">
             <img src={companyLogo} alt="Shorewin Logo" className="admin-sidebar-logo" />
             <div className="admin-sidebar-header-text">
-              <h2>Ceylon Spice</h2>
-              <span>Control Panel</span>
+              <h2>Shorewin Lanka</h2>
+              <span>Agro Control Panel</span>
             </div>
           </div>
 
