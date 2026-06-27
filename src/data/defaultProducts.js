@@ -49,6 +49,7 @@ export const DEFAULT_PRODUCTS = [
     ],
     certifications: ['USDA Organic', 'SLS Certified', 'ISO 22000'],
     active: true,
+    inStock: true,
     pitch: {
       title: {
         EN: 'Why Choose Ceylon Local Ginger?',
@@ -137,6 +138,7 @@ export const DEFAULT_PRODUCTS = [
     ],
     certifications: ['Organic Cert', 'HACCP', 'GMP Approved'],
     active: true,
+    inStock: true,
     pitch: {
       title: {
         EN: 'Why Choose Ceylon Nai Miris?',

@@ -130,6 +130,10 @@ export default function App() {
 
   const addToCart = useCallback(
     (product, gradeName, qty, unit, unitPrice) => {
+      if (product.inStock === false) {
+        showToast(`Error: ${product.name} is currently out of stock.`);
+        return;
+      }
       const itemKey = `${product.id}-${gradeName}`;
       setCart((prev) => {
         const existing = prev.find((item) => item.key === itemKey);

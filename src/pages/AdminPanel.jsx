@@ -179,6 +179,36 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
       toast.error('❌ Network error while updating status.')
     }
   }
+  
+  // Toggle stock status — calls backend PUT, then refreshes from server
+  const handleToggleStock = async (id) => {
+    const product = products.find(p => p.id === id)
+    if (!product) return
+    const nextState = product.inStock === false ? true : false
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://shorewin-lanka-backend.vercel.app'
+    try {
+      const res = await fetch(`${baseUrl}/api/products/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...product, inStock: nextState }),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        toast.error(`❌ Failed to update stock status: ${err.error || 'Unknown error'}`)
+        return
+      }
+      // Refresh the full list from MongoDB
+      const allRes = await fetch(`${baseUrl}/api/products`)
+      const fresh = await allRes.json()
+      setProducts(fresh)
+      const label = nextState ? 'IN STOCK' : 'OUT OF STOCK'
+      addActivityLog(`Product "${product.name}" stock status changed to ${label}.`)
+      toast.success(`✅ "${product.name}" is now ${label}.`)
+    } catch (e) {
+      console.error(e)
+      toast.error('❌ Network error while updating stock status.')
+    }
+  }
 
   // Delete product — calls backend DELETE, then refreshes from server
   const handleDeleteProduct = async (id, name) => {
@@ -246,6 +276,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
   const [imageUploaded, setImageUploaded] = useState(false) // true only after a successful Supabase upload
   const [imageSelected, setImageSelected] = useState(false)  // true when user has picked a NEW file
   const [formCerts, setFormCerts] = useState([])
+  const [formInStock, setFormInStock] = useState(true)
   const [imagePreviewUrl, setImagePreviewUrl] = useState('') // blob URL for preview only
 
   // Loading / in-progress flags
@@ -279,6 +310,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
     setImagePreviewUrl(existingUrl)
     setFormColor(product.color || 'var(--clr-ginger)')
     setFormCerts(product.certifications || [])
+    setFormInStock(product.inStock !== false)
     // For edit: image is considered "uploaded" if we have an existing valid URL and no new file selected
     setImageUploaded(!!existingUrl)
     setImageSelected(false)
@@ -317,6 +349,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
     setIsSubmittingProduct(false)
     if (fileInputRef.current) fileInputRef.current.value = ''
     setFormCerts(['USDA Organic', 'SLS Certified'])
+    setFormInStock(true)
     
     setFormPitchTitleEn('')
     setFormPitchTitleSi('')
@@ -484,6 +517,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
       })),
       certifications: formCerts,
       active: editingProduct ? editingProduct.active : true,
+      inStock: formInStock,
       pitch: {
         title: { EN: formPitchTitleEn, SI: formPitchTitleSi },
         text: { EN: formPitchTextEn, SI: formPitchTextSi },
@@ -780,6 +814,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
                       <th>Grades</th>
                       <th>Starting Price</th>
                       <th>Buyer Access</th>
+                      <th>Stock Status</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -833,6 +868,23 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
                               </div>
                               <span className={`admin-badge ${p.active ? 'admin-badge--active' : 'admin-badge--inactive'}`}>
                                 {p.active ? 'Active' : 'Hidden'}
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                              <div className="admin-switch-container">
+                                <label className="admin-switch">
+                                  <input 
+                                    type="checkbox" 
+                                    checked={p.inStock !== false} 
+                                    onChange={() => handleToggleStock(p.id)}
+                                  />
+                                  <span className="admin-slider"></span>
+                                </label>
+                              </div>
+                              <span className={`admin-badge ${p.inStock !== false ? 'admin-badge--active' : 'admin-badge--inactive'}`}>
+                                {p.inStock !== false ? 'In Stock' : 'Out of Stock'}
                               </span>
                             </div>
                           </td>
@@ -1038,6 +1090,25 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
                         onChange={(e) => setFormTagline(e.target.value)}
                         placeholder="e.g. Sweet, Sweetly Aromatic & Pure"
                       />
+                    </div>
+
+                    <div className="admin-input-group">
+                      <label>Inventory Stock Availability</label>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', height: '42px' }}>
+                        <div className="admin-switch-container">
+                          <label className="admin-switch">
+                            <input 
+                              type="checkbox" 
+                              checked={formInStock} 
+                              onChange={(e) => setFormInStock(e.target.checked)}
+                            />
+                            <span className="admin-slider"></span>
+                          </label>
+                        </div>
+                        <span className={`admin-badge ${formInStock ? 'admin-badge--active' : 'admin-badge--inactive'}`}>
+                          {formInStock ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                      </div>
                     </div>
                   </div>
 

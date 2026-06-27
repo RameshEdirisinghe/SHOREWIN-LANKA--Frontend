@@ -109,9 +109,15 @@ export default function Products({ buyerType, currency, language, addToCart, pro
                     e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23c59d5f" stroke-width="1.5"%3E%3Crect x="3" y="3" width="18" height="18" rx="2"/%3E%3Ccircle cx="8.5" cy="8.5" r="1.5"/%3E%3Cpath d="M21 15l-5-5L5 21"/%3E%3C/svg%3E'
                   }}
                 />
-                <div className="product-badge-overlay">
-                  {p.name.toLowerCase().includes('ginger') ? '100% True Ginger' : (p.name.toLowerCase().includes('miris') ? 'Dragon Heat Level' : 'Premium Reserve')}
-                </div>
+                {p.inStock === false ? (
+                  <div className="product-badge-overlay out-of-stock">
+                    {language === 'EN' ? 'Out of Stock' : 'තොග අවසන්'}
+                  </div>
+                ) : (
+                  <div className="product-badge-overlay">
+                    {p.name.toLowerCase().includes('ginger') ? '100% True Ginger' : (p.name.toLowerCase().includes('miris') ? 'Dragon Heat Level' : 'Premium Reserve')}
+                  </div>
+                )}
               </div>
 
               <div className="product-card-details">
@@ -164,35 +170,60 @@ export default function Products({ buyerType, currency, language, addToCart, pro
 
                   <div className="product-quantity-selector">
                     <span className="qty-label">{text.qtyLabel} (kg)</span>
-                    <div className="qty-input-controls">
-                      <button className="qty-btn" onClick={() => handleDecrement(p.id)}>-</button>
+                    <div className={`qty-input-controls ${p.inStock === false ? 'disabled-controls' : ''}`}>
+                      <button className="qty-btn" onClick={() => handleDecrement(p.id)} disabled={p.inStock === false}>-</button>
                       <input
                         type="number"
                         className="qty-input-field"
                         value={quantities[p.id] === undefined ? (buyerType === 'local' ? 5 : 10) : quantities[p.id]}
                         onChange={(e) => handleQtyChange(p.id, e.target.value)}
+                        disabled={p.inStock === false}
                         onBlur={() => {
                           if (quantities[p.id] === '') {
                             handleQtyChange(p.id, buyerType === 'local' ? 5 : 10)
                           }
                         }}
                       />
-                      <button className="qty-btn" onClick={() => handleIncrement(p.id)}>+</button>
+                      <button className="qty-btn" onClick={() => handleIncrement(p.id)} disabled={p.inStock === false}>+</button>
                     </div>
                   </div>
                 </div>
 
-                <div className="product-card-action-bar">
-                  <button 
-                    className="btn btn--primary btn-add-cart-full"
-                    onClick={() => activeGrade && addToCart(p, activeGrade.name, qty, 'kg', localizedPrice)}
-                    disabled={!activeGrade}
-                  >
-                    <span>🛒</span> {text.addCartBtn} — {currencySymbol}{(localizedPrice * qty).toLocaleString()}
-                  </button>
-                </div>
-                
-                <p className="moq-disclaimer">{text.moqMsg}</p>
+                {p.inStock === false ? (
+                  <div className="product-out-of-stock-container">
+                    <p className="product-out-of-stock-warning">
+                      ⚠️ {language === 'EN' 
+                        ? 'This product is currently unavailable. Please contact us for availability and further information.'
+                        : 'මෙම නිෂ්පාදනය දැනට ලබාගත නොහැක. තොග තිබේද යන්න සහ වැඩිදුර තොරතුරු සඳහා කරුණාකර අප හා සම්බන්ධ වන්න.'}
+                    </p>
+                    <div className="product-card-action-bar">
+                      <a 
+                        href="tel:+94767201226"
+                        className="btn btn--secondary btn-inquiry-full"
+                        style={{ display: 'flex', width: '100%', textDecoration: 'none', justifyContent: 'center', alignItems: 'center' }}
+                      >
+                        <span>📞</span> {language === 'EN' ? 'Call for Inquiry' : 'විමසීම් සඳහා අමතන්න'}
+                      </a>
+                    </div>
+                    <p className="inquiry-fallback-number">
+                      {language === 'EN' ? 'Contact Number: ' : 'දුරකථන අංකය: '}<strong>+94 76 720 1226</strong>
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="product-card-action-bar">
+                      <button 
+                        className="btn btn--primary btn-add-cart-full"
+                        onClick={() => activeGrade && addToCart(p, activeGrade.name, qty, 'kg', localizedPrice)}
+                        disabled={!activeGrade}
+                      >
+                        <span>🛒</span> {text.addCartBtn} — {currencySymbol}{(localizedPrice * qty).toLocaleString()}
+                      </button>
+                    </div>
+                    
+                    <p className="moq-disclaimer">{text.moqMsg}</p>
+                  </>
+                )}
               </div>
             </article>
           )
