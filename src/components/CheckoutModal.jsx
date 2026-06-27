@@ -118,14 +118,14 @@ ${itemsList}
       setCreatedOrder(data)
       
       // Open WhatsApp in a new tab with the prefilled message
-      const waUrl = `https://wa.me/94767201226?text=${encodeURIComponent(whatsAppMessage)}`
+      const waUrl = `https://wa.me/94777815738?text=${encodeURIComponent(whatsAppMessage)}`
       window.open(waUrl, '_blank')
       
       setStep(2) // Move to success page
     } catch (err) {
       console.error(err)
       alert('⚠️ Database saving failed, opening WhatsApp order directly...')
-      const waUrl = `https://wa.me/94767201226?text=${encodeURIComponent(whatsAppMessage)}`
+      const waUrl = `https://wa.me/94777815738?text=${encodeURIComponent(whatsAppMessage)}`
       window.open(waUrl, '_blank')
       setStep(2)
     } finally {

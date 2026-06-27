@@ -198,7 +198,7 @@ export default function Products({ buyerType, currency, language, addToCart, pro
                     </p>
                     <div className="product-card-action-bar">
                       <a 
-                        href="tel:+94767201226"
+                        href="tel:+94777815738"
                         className="btn btn--secondary btn-inquiry-full"
                         style={{ display: 'flex', width: '100%', textDecoration: 'none', justifyContent: 'center', alignItems: 'center' }}
                       >
@@ -206,7 +206,7 @@ export default function Products({ buyerType, currency, language, addToCart, pro
                       </a>
                     </div>
                     <p className="inquiry-fallback-number">
-                      {language === 'EN' ? 'Contact Number: ' : 'දුරකථන අංකය: '}<strong>+94 76 720 1226</strong>
+                      {language === 'EN' ? 'Contact Number: ' : 'දුරකථන අංකය: '}<strong>+94 77 781 5738</strong>
                     </p>
                   </div>
                 ) : (
