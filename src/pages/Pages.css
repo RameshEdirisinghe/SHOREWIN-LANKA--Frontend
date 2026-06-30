@@ -1,4 +1,4 @@
-/* General styles for new pages - Shorewin Lanka Agro Premium Light System */
+/* General styles for new pages - Shorewin Lanka Premium Light System */
 .page-container {
   padding-top: 140px;
   padding-bottom: 6rem;
@@ -199,8 +199,8 @@
 
 /* Logo ring */
 .ac-hero__logo-ring {
-  width: 88px;
-  height: 88px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   padding: 5px;
   background: rgba(255,255,255,0.04);
@@ -252,7 +252,7 @@
 .ac-hero__left::after {
   content: '';
   position: absolute;
-  left: calc(88px + 3.5rem + 1.5rem);
+  left: calc(140px + 3.5rem + 1.5rem);
   top: 2.5rem;
   bottom: 2.5rem;
   width: 1px;
@@ -337,8 +337,8 @@
     border-radius: var(--radius-md);
   }
   .ac-hero__logo-ring {
-    width: 72px;
-    height: 72px;
+    width: 100px;
+    height: 100px;
   }
 }
 

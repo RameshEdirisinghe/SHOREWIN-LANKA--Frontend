@@ -8,7 +8,7 @@ export default function Hero({ buyerType, language }) {
       label: "Sri Lanka's Finest",
       titlePre: "The World's",
       titleItalic: "Purest",
-      titlePost: "Ceylon Spices",
+      titlePost: "Harvest",
       subtitle:
         "Hand-harvested ginger & hot dragon nai miris from the lush highlands of Sri Lanka — shipped fresh to your door, anywhere on earth.",
       badgeOrganic: "100% Organic",

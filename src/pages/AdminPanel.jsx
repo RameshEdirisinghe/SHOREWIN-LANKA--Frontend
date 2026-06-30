@@ -579,8 +579,8 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
       <div className="admin-login-wrapper">
         <div className="admin-login-card glass-dark">
           <div className="admin-login-logo">
-            <img src={companyLogo} alt="Shorewin Agri Logo" className="admin-login-logo-img" />
-            <h1>Shorewin Lanka Agro</h1>
+            <img src={companyLogo} alt="Shorewin Lanka Logo" className="admin-login-logo-img" />
+            <h1>Shorewin Lanka</h1>
             <p>Admin Workspace</p>
           </div>
           
@@ -628,7 +628,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
             style={{ width: '100%', justifyContent: 'center', marginTop: '20px' }}
             onClick={() => setCurrentPage('home')}
           >
-            <ArrowLeft size={16} /> Back to Shorewin Shop
+            <ArrowLeft size={16} /> Back to Shorewin Lanka
           </button>
         </div>
       </div>
@@ -657,7 +657,7 @@ export default function AdminPanel({ products, setProducts, setCurrentPage }) {
             <img src={companyLogo} alt="Shorewin Logo" className="admin-sidebar-logo" />
             <div className="admin-sidebar-header-text">
               <h2>Shorewin Lanka</h2>
-              <span>Agro Control Panel</span>
+              <span>Control Panel</span>
             </div>
           </div>
 

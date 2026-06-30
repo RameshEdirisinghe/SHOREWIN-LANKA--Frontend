@@ -67,9 +67,9 @@ export default function Footer({ buyerType, language }) {
           {/* Brand Info */}
           <div className="footer-col-brand">
             <div className="footer-brand-logo-container">
-              <img src={companyLogo} alt="Shorewin Agri Logo" className="footer-brand-logo-img" />
+              <img src={companyLogo} alt="Shorewin Lanka Logo" className="footer-brand-logo-img" />
               <div className="footer-brand-logo-text">
-                Shorewin Lanka <span>Agro</span>
+                Shorewin <span>Lanka</span>
               </div>
             </div>
             <p className="footer-tagline-text">{t.tagline}</p>

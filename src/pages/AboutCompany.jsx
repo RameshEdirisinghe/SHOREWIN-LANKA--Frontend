@@ -13,7 +13,7 @@ export default function AboutCompany({ language }) {
       title: 'Our Company',
       subtitle: 'Boutique Heritage & Global Vision',
       tagline:
-        "Bridging Sri Lanka's high-pungency spice collectives with global B2B culinary & medicinal markets since 2008.",
+        "Exporting Sri Lanka's finest natural harvests, spices, herbs, and value-added agricultural products to global markets with uncompromising quality and authenticity.",
 
       visionTitle: 'Our Vision',
       visionText:
@@ -42,7 +42,7 @@ export default function AboutCompany({ language }) {
         {
           heading: 'A Boutique Export Competitor',
           icon: '🏆',
-          text: 'While global giants dominate bulk spice markets, Shorewin Agri positions itself as a boutique competitor. We do not chase immense volumes; instead, we target high-value niche markets that demand extreme quality, unique terroir profiles, and premium organic processing.',
+          text: 'While global giants dominate bulk spice markets, Shorewin Lanka positions itself as a boutique competitor. We do not chase immense volumes; instead, we target high-value niche markets that demand extreme quality, unique terroir profiles, and premium organic processing.',
         },
         {
           heading: 'GlobalG.A.P. & Certified Organic Sourcing',
@@ -62,7 +62,7 @@ export default function AboutCompany({ language }) {
       title: 'අපේ සමාගම',
       subtitle: 'දේශීය උරුමය සහ ගෝලීය දැක්ම',
       tagline:
-        '2008 වසරේ සිට ශ්‍රී ලංකාවේ ඉහළම සැර කුළුබඩු වගාවන් ගෝලීය B2B සූපශාස්ත්‍ර හා ඖෂධ වෙළඳපොල සමඟ සම්බන්ධ කිරීම.',
+        'ශ්‍රී ලංකාවේ විශිෂ්ටතම ස්වාභාවික අස්වැන්න, කුළුබඩු, ඖෂධ පැළෑටි සහ අගය එකතු කළ කෘෂිකාර්මික නිෂ්පාදන කිසිදු සම්මුතියකින් තොර ගුණාත්මකභාවයකින් සහ සත්‍යතාවකින් යුතුව ගෝලීය වෙළඳපොළට අපනයනය කිරීම.',
 
       visionTitle: 'අපේ දැක්ම',
       visionText:
@@ -116,7 +116,7 @@ export default function AboutCompany({ language }) {
           {/* Left column: logo + cert badges */}
           <div className="ac-hero__left">
             <div className="ac-hero__logo-ring">
-              <img src={companyLogo} alt="Shorewin Agri" className="ac-hero__logo" />
+              <img src={companyLogo} alt="Shorewin Lanka" className="ac-hero__logo" />
             </div>
             <div className="ac-hero__badges">
               <span className="ac-hero__badge">100% Organic</span>
